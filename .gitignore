@@ -1,0 +1,12 @@
+*.class
+*.jar
+
+target/
+
+.metadata
+.settings/
+.classpath
+.project
+
+.vscode/
+.code-workspace
