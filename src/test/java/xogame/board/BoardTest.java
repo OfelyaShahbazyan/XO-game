@@ -1,11 +1,8 @@
 package xogame.board;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import java.util.Arrays;
-
 import org.junit.jupiter.api.Test;
-
 import xogame.models.Board;
 
 public class BoardTest {
