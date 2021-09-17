@@ -9,4 +9,3 @@ For more information see [Wikipedia](https://en.wikipedia.org/wiki/Tic-tac-toe).
 
 ---
 ### Technologies Used
-1
