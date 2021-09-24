@@ -10,7 +10,7 @@ public class BoardTest {
     public void freshBoardShouldContainOnlyZeros() {
         Board board = new Board();
         
-        Arrays.stream(board.board).forEach(e -> {
+        Arrays.stream(board.getBoard()).forEach(e -> {
             assertEquals(0, e, "Invalid initial board state.");
         });
     }
@@ -19,6 +19,6 @@ public class BoardTest {
     public void freshBoardShouldContainNineElements() {
         Board board = new Board();
         
-        assertEquals(9, board.board.length, "Invalid board size.");
+        assertEquals(9, board.getBoard().length, "Invalid board size.");
     }
 }
