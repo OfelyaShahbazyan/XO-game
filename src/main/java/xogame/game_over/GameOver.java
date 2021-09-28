@@ -1,5 +1,7 @@
 package xogame.game_over;
 
+import java.util.List;
+
 import xogame.models.Board;
 
 public class GameOver {
@@ -7,11 +9,12 @@ public class GameOver {
         return null;
     }
 
-    public static Boolean isARowComplete(int rowNumber, Board board) {
-        if (board.getBoard()[rowNumber * 3 + 0] == board.getBoard()[rowNumber * 3 + 1]
-                && board.getBoard()[rowNumber * 3 + 0] == board.getBoard()[rowNumber * 3 + 2]
-                && board.getBoard()[rowNumber * 3 + 0] != 0) {
-            return true;
+    public static Boolean isAnyRowComplete(Board board) {
+        for (List<Integer> list : board.getRows()) {
+            if (list.get(0) != 0) {
+                if (list.get(1).equals(list.get(0)) && list.get(2).equals(list.get(0)))
+                    return true;
+            }
         }
         return false;
     }
