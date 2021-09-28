@@ -1,6 +1,6 @@
 package xogame.game_over;
 
-import java.util.List;
+import java.util.function.Predicate;
 
 import xogame.models.Board;
 
@@ -10,10 +10,10 @@ public class GameOver {
     }
 
     public static Boolean isAnyRowComplete(Board board) {
-        for (List<Integer> list : board.getRows()) {
-            if (list.get(0) != 0) {
-                if (list.get(1).equals(list.get(0)) && list.get(2).equals(list.get(0)))
-                    return true;
+        for (int i = 0; i < board.getRows().size(); i++) {
+            Predicate<Integer> streamsPredicate = item -> item == 1 || item == 2;
+            if (board.getRows().get(i).stream().allMatch(streamsPredicate)) {
+                return true;
             }
         }
         return false;
