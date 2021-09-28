@@ -20,13 +20,7 @@ public class GameOver {
     }
 
     public static Boolean isAnyColumnComplete(Board board) {
-        for (int i = 0; i < board.getColumns().size(); i++) {
-            Predicate<Integer> streamsPredicate = item -> item == 1 || item == 2;
-            if (board.getColumns().get(i).stream().allMatch(streamsPredicate)) {
-                return true;
-            }
-        }
-        return false;
+        return null;
     }
 
     public static Boolean isADiagonalComplete(Board board) {
