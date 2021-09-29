@@ -9,6 +9,10 @@ public class GameOver {
         return null;
     }
 
+    public static Boolean isAnyRowComplete(Board board) {
+        return null;
+    }
+
     public static Boolean isAnyColumnComplete(Board board) {
         for (int i = 0; i < board.getColumns().size(); i++) {
             Predicate<Integer> streamsPredicate = item -> item == 1 || item == 2;
