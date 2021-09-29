@@ -23,6 +23,12 @@ public class GameOverTest {
     }
 
     @Test
+    public void get_diagonals_of_the_board(){
+        Board board = new Board(new int[] { 2, 2, 0, 1, 1, 1, 0, 0, 0 });
+        assertEquals(2, board.getDiagonals().size());
+    }
+
+    @Test
     public void the_first_row_is_complete_if_it_contains_all_ones() {
         Board board = new Board(new int[] { 1, 1, 1, 2, 2, 0, 0, 0, 0 });
         assertTrue(GameOver.isAnyRowComplete(board));

@@ -34,4 +34,8 @@ public class Board {
         }
         return columns;
     }
+
+    public List<List<Integer>> getDiagonals() {
+        return null;
+    }
 }
