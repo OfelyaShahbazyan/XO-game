@@ -1,5 +1,9 @@
 package xogame.game_over;
 
+import java.util.function.Predicate;
+
+import xogame.models.Board;
+
 public class GameOver {
     public static Boolean isGameOver(Board board) {
         return null;
