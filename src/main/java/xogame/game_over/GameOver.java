@@ -19,7 +19,7 @@ public class GameOver {
         return false;
     }
 
-    public static Boolean isAColumnComplete(int rowNumber, Board board) {
+    public static Boolean isAnyColumnComplete(Board board) {
         return null;
     }
 
