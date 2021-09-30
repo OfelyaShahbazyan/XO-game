@@ -29,7 +29,7 @@ public class GameOverTest {
     }
 
     @Test
-    public void the_first_row_is_complete_if_it_contains_all_zeros() {
+    public void the_first_row_is_not_complete_if_it_contains_all_zeros() {
         Board board = new Board(new int[] { 0, 0, 0, 2, 2, 0, 0, 0, 0 });
         assertFalse(GameOver.isAnyRowComplete(board));
     }
@@ -47,7 +47,7 @@ public class GameOverTest {
     }
 
     @Test
-    public void the_second_row_is_complete_if_it_contains_all_zeros() {
+    public void the_second_row_is_not_complete_if_it_contains_all_zeros() {
         Board board = new Board(new int[] { 2, 2, 0, 0, 0, 0, 0, 0, 0 });
         assertFalse(GameOver.isAnyRowComplete(board));
     }
@@ -65,7 +65,7 @@ public class GameOverTest {
     }
 
     @Test
-    public void the_third_row_is_complete_if_it_contains_all_zeros() {
+    public void the_third_row_is_not_complete_if_it_contains_all_zeros() {
         Board board = new Board(new int[] { 2, 2, 0, 0, 0, 0, 0, 0, 0 });
         assertFalse(GameOver.isAnyRowComplete(board));
     }
