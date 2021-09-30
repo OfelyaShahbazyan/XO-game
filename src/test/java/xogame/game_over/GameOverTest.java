@@ -21,10 +21,10 @@ public class GameOverTest {
 
     @Test
     public void check_content_of_the_board() {
-        Board board = new Board(new int[] { 2, 2, 0, 0, 0, 0, 0, 0, 0 });
-        assertEquals(Arrays.stream(new int[] { 2, 2, 0 }).boxed().collect(Collectors.toList()), board.getRows().get(0));
-        assertEquals(Arrays.stream(new int[] { 0, 0, 0 }).boxed().collect(Collectors.toList()), board.getRows().get(1));
-        assertEquals(Arrays.stream(new int[] { 0, 0, 0 }).boxed().collect(Collectors.toList()), board.getRows().get(2));
+        Board board = new Board(new int[] { 2, 1, 0, 0, 2, 1, 1, 0, 2 });
+        assertEquals(Arrays.stream(new int[] { 2, 1, 0 }).boxed().collect(Collectors.toList()), board.getRows().get(0));
+        assertEquals(Arrays.stream(new int[] { 0, 2, 1 }).boxed().collect(Collectors.toList()), board.getRows().get(1));
+        assertEquals(Arrays.stream(new int[] { 1, 0, 2 }).boxed().collect(Collectors.toList()), board.getRows().get(2));
     }
 
     @Test
