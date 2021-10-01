@@ -20,7 +20,7 @@ public class GameOverTest {
     }
 
     @Test
-    public void check_content_of_the_board() {
+    public void check_content_of_the_board_by_columns() {
         Board board = new Board(new int[] { 2, 1, 0, 0, 2, 1, 1, 0, 2 });
         assertEquals(Arrays.stream(new int[] { 2, 0, 1 }).boxed().collect(Collectors.toList()), board.getColumns().get(0));
         assertEquals(Arrays.stream(new int[] { 1, 2, 0 }).boxed().collect(Collectors.toList()), board.getColumns().get(1));
