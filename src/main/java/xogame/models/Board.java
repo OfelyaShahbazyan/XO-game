@@ -25,6 +25,7 @@ public class Board {
         for (int i = 0; i < 3; i++) {
             rows.add(Arrays.asList(board[i * 3], board[i * 3 + 1], board[i * 3 + 2]));
         }
+        
         return rows;
     }
 
@@ -34,6 +35,7 @@ public class Board {
         for (int i = 0; i < 3; i++) {
             columns.add(Arrays.asList(board[0 + i], board[3 + i], board[6 + i]));
         }
+
         return columns;
     }
 }
