@@ -32,8 +32,8 @@ public class GameOverTest {
 
     @Test
     public void check_binary_Operation() {
-        assertFalse(GameOver.binaryOperation(false, false));
-        assertTrue(GameOver.binaryOperation(false, true));
-        assertTrue(GameOver.binaryOperation(true, true));
+        assertFalse(GameOver.isBitwiseOrAssignmentOperator(false, false));
+        assertTrue(GameOver.isBitwiseOrAssignmentOperator(false, true));
+        assertTrue(GameOver.isBitwiseOrAssignmentOperator(true, true));
     }
 }
