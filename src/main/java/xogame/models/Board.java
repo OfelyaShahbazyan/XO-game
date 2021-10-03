@@ -25,7 +25,7 @@ public class Board {
         for (int i = 0; i < 3; i++) {
             rows.add(Arrays.asList(board[i * 3], board[i * 3 + 1], board[i * 3 + 2]));
         }
-        
+
         return rows;
     }
 
@@ -37,5 +37,9 @@ public class Board {
         }
 
         return columns;
+    }
+
+    public List<List<Integer>> getDiagonals() {
+        return null;
     }
 }
