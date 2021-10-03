@@ -9,7 +9,7 @@ public class GameOver {
     public static final Predicate<Integer> streamsPredicate = item -> item == 1 || item == 2;
 
     public static Boolean isAnyColumnComplete(Board board) {
-        return null;
+        return isBitwiseOrAssignmentOperator(false, isListSatisfyToTheCondition(board.getColumns(), streamsPredicate));
     }
 
     public static Boolean isListSatisfyToTheCondition(List<List<Integer>> list, Predicate<Integer> condition) {
