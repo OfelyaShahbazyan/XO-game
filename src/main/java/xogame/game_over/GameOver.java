@@ -6,8 +6,10 @@ import java.util.function.Predicate;
 import xogame.models.Board;
 
 public class GameOver {
+    public static final Predicate<Integer> streamsPredicate = item -> item == 1 || item == 2;
+
     public static Boolean isAnyRowComplete(Board board) {
-        return null;
+        return isBitwiseOrAssignmentOperator(false, isListSatisfyToTheCondition(board.getRows(), streamsPredicate));
     }
 
     public static Boolean isListSatisfyToTheCondition(List<List<Integer>> list, Predicate<Integer> condition) {
