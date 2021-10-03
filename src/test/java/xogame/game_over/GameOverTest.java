@@ -1,6 +1,8 @@
 package xogame.game_over;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.Arrays;
 import java.util.stream.Collectors;
@@ -27,4 +29,11 @@ public class GameOverTest {
         assertEquals(Arrays.stream(new int[] { 0, 1, 2 }).boxed().collect(Collectors.toList()),
                 board.getColumns().get(2));
     }
- }
+
+    @Test
+    public void check_binary_Operation() {
+        assertFalse(GameOver.binaryOperation(false, false));
+        assertTrue(GameOver.binaryOperation(false, true));
+        assertTrue(GameOver.binaryOperation(true, true));
+    }
+}
