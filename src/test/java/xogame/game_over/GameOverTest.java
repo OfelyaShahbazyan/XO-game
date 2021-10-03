@@ -151,5 +151,5 @@ public class GameOverTest {
     public void the_third_row_is_not_complete_if_it_contains_all_zeros() {
         Board board = new Board(new int[] { 2, 2, 0, 0, 0, 0, 0, 0, 0 });
         assertFalse(GameOver.isAnyRowComplete(board));
-    }
+    }     
 }
