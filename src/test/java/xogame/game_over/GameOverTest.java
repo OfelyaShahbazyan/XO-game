@@ -98,4 +98,58 @@ public class GameOverTest {
     public void list_contains_one_empty_and_one_not_empty_and_one_empty_lists_and_it_is_satisfy_to_the_condition() {
         assertTrue(GameOver.isListSatisfyToTheCondition(Arrays.asList(emptyList, Arrays.asList(2, 2, 2), emptyList), condition));
     }
+
+    @Test
+    public void the_first_row_is_complete_if_it_contains_all_ones() {
+        Board board = new Board(new int[] { 1, 1, 1, 2, 2, 0, 0, 0, 0 });
+        assertTrue(GameOver.isAnyRowComplete(board));
+    }
+
+    @Test
+    public void the_first_row_is_complete_if_it_contains_all_twos() {
+        Board board = new Board(new int[] { 2, 2, 2, 1, 1, 0, 0, 0, 0 });
+        assertTrue(GameOver.isAnyRowComplete(board));
+    }
+
+    @Test
+    public void the_first_row_is_not_complete_if_it_contains_all_zeros() {
+        Board board = new Board(new int[] { 0, 0, 0, 2, 2, 0, 0, 0, 0 });
+        assertFalse(GameOver.isAnyRowComplete(board));
+    }
+
+    @Test
+    public void the_second_row_is_complete_if_it_contains_all_ones() {
+        Board board = new Board(new int[] { 2, 2, 0, 1, 1, 1, 0, 0, 0 });
+        assertTrue(GameOver.isAnyRowComplete(board));
+    }
+
+    @Test
+    public void the_second_row_is_complete_if_it_contains_all_twos() {
+        Board board = new Board(new int[] { 1, 1, 0, 2, 2, 2, 0, 0, 0 });
+        assertTrue(GameOver.isAnyRowComplete(board));
+    }
+
+    @Test
+    public void the_second_row_is_not_complete_if_it_contains_all_zeros() {
+        Board board = new Board(new int[] { 2, 2, 0, 0, 0, 0, 0, 0, 0 });
+        assertFalse(GameOver.isAnyRowComplete(board));
+    }
+
+    @Test
+    public void the_third_row_is_complete_if_it_contains_all_ones() {
+        Board board = new Board(new int[] { 2, 2, 0, 0, 0, 0, 1, 1, 1 });
+        assertTrue(GameOver.isAnyRowComplete(board));
+    }
+
+    @Test
+    public void the_third_row_is_complete_if_it_contains_all_twos() {
+        Board board = new Board(new int[] { 1, 1, 0, 0, 0, 0, 2, 2, 2 });
+        assertTrue(GameOver.isAnyRowComplete(board));
+    }
+
+    @Test
+    public void the_third_row_is_not_complete_if_it_contains_all_zeros() {
+        Board board = new Board(new int[] { 2, 2, 0, 0, 0, 0, 0, 0, 0 });
+        assertFalse(GameOver.isAnyRowComplete(board));
+    }
 }

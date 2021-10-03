@@ -3,7 +3,13 @@ package xogame.game_over;
 import java.util.List;
 import java.util.function.Predicate;
 
+import xogame.models.Board;
+
 public class GameOver {
+    public static Boolean isAnyRowComplete(Board board) {
+        return null;
+    }
+
     public static Boolean isListSatisfyToTheCondition(List<List<Integer>> list, Predicate<Integer> condition) {
         Boolean result = false;
 
