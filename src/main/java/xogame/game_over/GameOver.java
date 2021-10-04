@@ -8,10 +8,8 @@ import xogame.models.Board;
 public class GameOver {
     public static final Predicate<Integer> streamsPredicate = item -> item == 1 || item == 2;
 
-    public static Boolean isAnyColumnComplete(Board board) {
-        Boolean accumulator = false;
-        
-        return accumulator |= doesListSatisfyToTheCondition(board.getColumns(), streamsPredicate);
+    public static Boolean isAnyColumnComplete(Board board) {        
+        return doesListSatisfyToTheCondition(board.getColumns(), streamsPredicate);
     }
 
     public static Boolean doesListSatisfyToTheCondition(List<List<Integer>> list, Predicate<Integer> condition) {
