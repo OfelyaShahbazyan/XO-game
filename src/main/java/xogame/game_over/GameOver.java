@@ -9,7 +9,9 @@ public class GameOver {
     public static final Predicate<Integer> streamsPredicate = item -> item == 1 || item == 2;
 
     public static Boolean isAnyColumnComplete(Board board) {
-        return isBitwiseOrAssignmentOperator(false, isListSatisfyToTheCondition(board.getColumns(), streamsPredicate));
+        Boolean accumulator = false;
+        
+        return accumulator |= isListSatisfyToTheCondition(board.getColumns(), streamsPredicate);
     }
 
     public static Boolean isListSatisfyToTheCondition(List<List<Integer>> list, Predicate<Integer> condition) {
@@ -18,14 +20,10 @@ public class GameOver {
         for (int i = 0; i < list.size(); i++) {
 
             if (!list.get(i).isEmpty()) {
-                result = isBitwiseOrAssignmentOperator(result, list.get(i).stream().allMatch(condition));
+                result |= list.get(i).stream().allMatch(condition);
             }
         }
 
         return result;
-    }
-
-    public static Boolean isBitwiseOrAssignmentOperator(Boolean firstOperand, Boolean secondOperand) {
-        return firstOperand |= secondOperand;
     }
 }
