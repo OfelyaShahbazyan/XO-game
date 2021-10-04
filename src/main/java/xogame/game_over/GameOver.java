@@ -9,9 +9,7 @@ public class GameOver {
     public static final Predicate<Integer> streamsPredicate = item -> item == 1 || item == 2;
 
     public static Boolean isAnyDiagonalComplete(Board board) {
-        Boolean accumulator = false;
-
-        return accumulator |= doesListSatisfyToTheCondition(board.getDiagonals(), streamsPredicate);
+        return doesListSatisfyToTheCondition(board.getDiagonals(), streamsPredicate);
     }
 
     public static Boolean doesListSatisfyToTheCondition(List<List<Integer>> list, Predicate<Integer> condition) {
