@@ -33,14 +33,6 @@ public class GameOverTest {
     }
 
     @Test
-    public void check_binary_Operation() {
-        assertFalse(GameOver.isBitwiseOrAssignmentOperator(false, false));
-        assertTrue(GameOver.isBitwiseOrAssignmentOperator(false, true));
-        assertTrue(GameOver.isBitwiseOrAssignmentOperator(true, true));
-    }
-    // list_contains_an_empty_and_a_non_empty_lists_and_it_satisfies_the_condition
-
-    @Test
     public void list_contains_an_empty_list_and_it_does_not_satisfy_to_the_condition() {
         assertFalse(GameOver.doesListSatisfyToTheCondition(Arrays.asList(emptyList), condition));
     }  
