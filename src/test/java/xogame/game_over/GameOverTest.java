@@ -43,7 +43,7 @@ public class GameOverTest {
     }
 
     @Test
-    public void list_contains_a_non_empty_list_and_it_does_not_satisfy_to_the_condition() {
+    public void list_contains_a_non_empty_list_and_it_satisfies_to_the_condition() {
         assertTrue(GameOver.doesListSatisfyToTheCondition(Arrays.asList(Arrays.asList(1, 1, 1)), condition));
     }
 
@@ -83,7 +83,7 @@ public class GameOverTest {
     }
 
     @Test
-    public void list_contains_two_non_empty_and_an_empty_and_a_non_empty_lists_and_it_satisfies_to_the_condition() {
+    public void list_contains_a_non_empty_and_an_empty_and_a_non_empty_lists_and_it_satisfies_to_the_condition() {
         assertTrue(GameOver.doesListSatisfyToTheCondition(Arrays.asList(Arrays.asList(2, 2, 2), emptyList, Arrays.asList(2, 2, 2)), condition));
     }
 
