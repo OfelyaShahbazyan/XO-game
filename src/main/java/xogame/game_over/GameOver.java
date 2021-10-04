@@ -10,6 +10,7 @@ public class GameOver {
 
     public static Boolean isAnyRowComplete(Board board) {
         Boolean accumulator = false;
+        
         return accumulator |= doesListSatisfyToTheCondition(board.getRows(), streamsPredicate);
     }
 
