@@ -9,9 +9,7 @@ public class GameOver {
     public static final Predicate<Integer> streamsPredicate = item -> item == 1 || item == 2;
 
     public static Boolean isAnyRowComplete(Board board) {
-        Boolean accumulator = false;
-        
-        return accumulator |= doesListSatisfyToTheCondition(board.getRows(), streamsPredicate);
+        return doesListSatisfyToTheCondition(board.getRows(), streamsPredicate);
     }
 
     public static Boolean doesListSatisfyToTheCondition(List<List<Integer>> list, Predicate<Integer> condition) {
