@@ -11,10 +11,10 @@ public class GameOver {
     public static Boolean isAnyDiagonalComplete(Board board) {
         Boolean accumulator = false;
 
-        return accumulator |= isListSatisfyToTheCondition(board.getDiagonals(), streamsPredicate);
+        return accumulator |= doesListSatisfyToTheCondition(board.getDiagonals(), streamsPredicate);
     }
 
-    public static Boolean isListSatisfyToTheCondition(List<List<Integer>> list, Predicate<Integer> condition) {
+    public static Boolean doesListSatisfyToTheCondition(List<List<Integer>> list, Predicate<Integer> condition) {
         Boolean result = false;
 
         for (int i = 0; i < list.size(); i++) {

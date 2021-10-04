@@ -34,77 +34,64 @@ public class GameOverTest {
     }
 
     @Test
-    public void check_binary_Operation() {
-        assertFalse(GameOver.isBitwiseOrAssignmentOperator(false, false));
-        assertTrue(GameOver.isBitwiseOrAssignmentOperator(false, true));
-        assertTrue(GameOver.isBitwiseOrAssignmentOperator(true, true));
+    public void list_contains_an_empty_list_and_it_does_not_satisfy_to_the_condition() {
+        assertFalse(GameOver.doesListSatisfyToTheCondition(Arrays.asList(emptyList), condition));
     }
 
     @Test
-    public void list_contains_one_empty_list_and_it_is_not_satisfy_to_the_condition() {
-        assertFalse(GameOver.isListSatisfyToTheCondition(Arrays.asList(emptyList), condition));
+    public void list_contains_two_empty_lists_and_it_does_not_satisfy_to_the_condition() {
+        assertFalse(GameOver.doesListSatisfyToTheCondition(Arrays.asList(emptyList, emptyList), condition));
     }
 
     @Test
-    public void list_contains_two_empty_lists_and_it_is_not_satisfy_to_the_condition() {
-        assertFalse(GameOver.isListSatisfyToTheCondition(Arrays.asList(emptyList, emptyList), condition));
+    public void list_contains_a_non_empty_list_and_it_satisfies_to_the_condition() {
+        assertTrue(GameOver.doesListSatisfyToTheCondition(Arrays.asList(Arrays.asList(1, 1, 1)), condition));
     }
 
     @Test
-    public void list_contains_one_not_empty_list_and_it_is_satisfy_to_the_condition() {
-        assertTrue(GameOver.isListSatisfyToTheCondition(Arrays.asList(Arrays.asList(1, 1, 1)), condition));
+    public void list_contains_two_non_empty_lists_and_it_satisfies_to_the_condition() {
+        assertTrue(GameOver.doesListSatisfyToTheCondition(Arrays.asList(Arrays.asList(1, 1, 1), Arrays.asList(2, 2, 2)), condition));
     }
 
     @Test
-    public void list_contains_two_not_empty_lists_and_it_is_satisfy_to_the_condition() {
-        assertTrue(GameOver.isListSatisfyToTheCondition(Arrays.asList(Arrays.asList(1, 1, 1), Arrays.asList(2, 2, 2)),
-                condition));
+    public void list_contains_an_empty_and_a_non_empty_lists_and_it_satisfies_to_the_condition() {
+        assertTrue(GameOver.doesListSatisfyToTheCondition(Arrays.asList(emptyList, Arrays.asList(2, 2, 2)), condition));
     }
 
     @Test
-    public void list_contains_one_empty_and_one_not_empty_lists_and_it_is_satisfy_to_the_condition() {
-        assertTrue(GameOver.isListSatisfyToTheCondition(Arrays.asList(emptyList, Arrays.asList(2, 2, 2)), condition));
-    }
-
-    @Test
-    public void list_contains_one_empty_and_two_not_empty_lists_and_it_is_satisfy_to_the_condition() {
-        assertTrue(GameOver.isListSatisfyToTheCondition(
+    public void list_contains_an_empty_and_two_non_empty_lists_and_it_satisfies_to_the_condition() {
+        assertTrue(GameOver.doesListSatisfyToTheCondition(
                 Arrays.asList(emptyList, Arrays.asList(2, 2, 2), Arrays.asList(2, 2, 2)), condition));
     }
 
     @Test
-    public void list_contains_one_not_empty_and_one_empty_lists_and_it_is_satisfy_to_the_condition() {
-        assertTrue(GameOver.isListSatisfyToTheCondition(Arrays.asList(Arrays.asList(2, 2, 2), emptyList), condition));
+    public void list_contains_a_non_empty_and_an_empty_lists_and_it_satisfies_to_the_condition() {
+        assertTrue(GameOver.doesListSatisfyToTheCondition(Arrays.asList(Arrays.asList(2, 2, 2), emptyList), condition));
     }
 
     @Test
-    public void list_contains_one_not_empty_and_two_empty_lists_and_it_is_satisfy_to_the_condition() {
-        assertTrue(GameOver.isListSatisfyToTheCondition(Arrays.asList(Arrays.asList(2, 2, 2), emptyList, emptyList),
-                condition));
+    public void list_contains_a_non_empty_and_two_empty_lists_and_it_satisfies_to_the_condition() {
+        assertTrue(GameOver.doesListSatisfyToTheCondition(Arrays.asList(Arrays.asList(2, 2, 2), emptyList, emptyList), condition));
     }
 
     @Test
-    public void list_contains_two_empty_and_one_not_empty_lists_and_it_is_satisfy_to_the_condition() {
-        assertTrue(GameOver.isListSatisfyToTheCondition(Arrays.asList(emptyList, emptyList, Arrays.asList(2, 2, 2)),
-                condition));
+    public void list_contains_two_empty_and_a_non_empty_lists_and_it_satisfies_to_the_condition() {
+        assertTrue(GameOver.doesListSatisfyToTheCondition(Arrays.asList(emptyList, emptyList, Arrays.asList(2, 2, 2)), condition));
     }
 
     @Test
-    public void list_contains_two_not_empty_and_one_empty_lists_and_it_is_satisfy_to_the_condition() {
-        assertTrue(GameOver.isListSatisfyToTheCondition(
-                Arrays.asList(Arrays.asList(2, 2, 2), Arrays.asList(2, 2, 2), emptyList), condition));
+    public void list_contains_two_non_empty_and_an_empty_lists_and_it_satisfies_to_the_condition() {
+        assertTrue(GameOver.doesListSatisfyToTheCondition(Arrays.asList(Arrays.asList(2, 2, 2), Arrays.asList(2, 2, 2), emptyList), condition));
     }
 
     @Test
-    public void list_contains_one_not_empty_and_one_empty_and_one_not_empty_lists_and_it_is_satisfy_to_the_condition() {
-        assertTrue(GameOver.isListSatisfyToTheCondition(
-                Arrays.asList(Arrays.asList(2, 2, 2), emptyList, Arrays.asList(2, 2, 2)), condition));
+    public void list_contains_a_non_empty_and_an_empty_and_a_non_empty_lists_and_it_satisfies_to_the_condition() {
+        assertTrue(GameOver.doesListSatisfyToTheCondition(Arrays.asList(Arrays.asList(2, 2, 2), emptyList, Arrays.asList(2, 2, 2)), condition));
     }
 
     @Test
-    public void list_contains_one_empty_and_one_not_empty_and_one_empty_lists_and_it_is_satisfy_to_the_condition() {
-        assertTrue(GameOver.isListSatisfyToTheCondition(Arrays.asList(emptyList, Arrays.asList(2, 2, 2), emptyList),
-                condition));
+    public void list_contains_an_empty_and_a_non_empty_and_an_empty_lists_and_it_satisfies_to_the_condition() {
+        assertTrue(GameOver.doesListSatisfyToTheCondition(Arrays.asList(emptyList, Arrays.asList(2, 2, 2), emptyList), condition));
     }
 
     @Test
