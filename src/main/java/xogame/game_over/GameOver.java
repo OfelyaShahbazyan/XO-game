@@ -1,6 +1,5 @@
 package xogame.game_over;
 
-import java.util.List;
 import java.util.function.Predicate;
 
 import xogame.models.Board;
@@ -29,9 +28,5 @@ public class GameOver {
         }
 
         return accumulator;
-    }
-
-    public static Boolean doesAnyInnerListMatchTheCondition(List<List<Integer>> listOfLists, Predicate<List<Integer>> condition) {
-        return listOfLists.stream().anyMatch(condition);
     }
 }
