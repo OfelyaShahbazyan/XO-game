@@ -32,6 +32,6 @@ public class GameOver {
     }
 
     public static Boolean doesAnyInnerListMatchTheCondition(List<List<Integer>> listOfLists, Predicate<List<Integer>> condition) {
-        return null;
+        return listOfLists.stream().anyMatch(condition);
     }
 }
