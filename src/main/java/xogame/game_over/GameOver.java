@@ -29,5 +29,4 @@ public class GameOver {
 
         return accumulator;
     }
-
 }
