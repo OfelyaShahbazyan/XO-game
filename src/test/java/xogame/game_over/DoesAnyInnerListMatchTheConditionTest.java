@@ -12,7 +12,7 @@ import org.junit.jupiter.api.Test;
 
 public class DoesAnyInnerListMatchTheConditionTest {
     public final List<Integer> emptyList = Collections.<Integer>emptyList();
-    public final Predicate<List<Integer>> listPredicate = list -> list.stream().allMatch(item -> item == 1) || list.stream().allMatch(item -> item == 2);
+    public final Predicate<List<Integer>> listPredicate = li -> li.isEmpty() ? false : li.stream().allMatch(e -> e == 1) || li.stream().allMatch(e -> e == 2);
 
     @Test
     public void list_containing_an_empty_list_should_always_fail_to_match() {
