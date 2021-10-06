@@ -19,6 +19,16 @@ public class Board {
         return Arrays.copyOf(board, board.length);
     }
 
+    public List<List<Integer>> getRows() {
+        List<List<Integer>> rows = new ArrayList<>();
+
+        for (int i = 0; i < 3; i++) {
+            rows.add(Arrays.asList(board[i * 3], board[i * 3 + 1], board[i * 3 + 2]));
+        }
+        
+        return rows;
+    }
+
     public List<List<Integer>> getDiagonals() {
         List<List<Integer>> diagonals = new ArrayList<>();
         int i = 0;
@@ -26,5 +36,5 @@ public class Board {
         diagonals.add(Arrays.asList(board[i * 3 + 2], board[(i + 1) * 3 + 1], board[(i + 2) * 3 + 0]));
 
         return diagonals;
-    }
+    }    
 }
