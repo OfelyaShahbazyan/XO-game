@@ -28,14 +28,4 @@ public class Board {
         
         return rows;
     }
-
-    public List<List<Integer>> getColumns() {
-        List<List<Integer>> columns = new ArrayList<>();
-
-        for (int i = 0; i < 3; i++) {
-            columns.add(Arrays.asList(board[0 + i], board[3 + i], board[6 + i]));
-        }
-
-        return columns;
-    }
 }
