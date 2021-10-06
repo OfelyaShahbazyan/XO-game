@@ -13,9 +13,11 @@ public class GameOver {
         return doesAnyInnerListMatchTheCondition(board.getRows(), listPredicate);
     }
 
+    public static Boolean isAnyColumnComplete(Board board) {
+        return doesAnyInnerListMatchTheCondition(board.getColumns(), listPredicate);
+    }
+
     public static Boolean doesAnyInnerListMatchTheCondition(List<List<Integer>> listOfLists, Predicate<List<Integer>> condition) {
-        List<List<Integer>> listOfListsWithoutEmptyLists = listOfLists.stream().filter(e -> !e.isEmpty()).collect(Collectors.toList());
-        
-            return listOfListsWithoutEmptyLists.stream().anyMatch(condition);
+        return listOfLists.stream().filter(e -> !e.isEmpty()).anyMatch(condition);
     }
 }
