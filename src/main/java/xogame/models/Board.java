@@ -29,12 +29,21 @@ public class Board {
         return rows;
     }
 
+    public List<List<Integer>> getColumns() {
+        List<List<Integer>> columns = new ArrayList<>();
+
+        for (int i = 0; i < 3; i++) {
+            columns.add(Arrays.asList(board[0 + i], board[3 + i], board[6 + i]));
+        }
+
+        return columns;
+    }    
+
     public List<List<Integer>> getDiagonals() {
         List<List<Integer>> diagonals = new ArrayList<>();
-        int i = 0;
-        diagonals.add(Arrays.asList(board[i * 3 + 0], board[(i + 1) * 3 + 1], board[(i + 2) * 3 + 2]));
-        diagonals.add(Arrays.asList(board[i * 3 + 2], board[(i + 1) * 3 + 1], board[(i + 2) * 3 + 0]));
+        diagonals.add(Arrays.asList(board[0], board[4], board[8]));
+        diagonals.add(Arrays.asList(board[2], board[4], board[6]));
 
         return diagonals;
-    }    
+    }
 }
