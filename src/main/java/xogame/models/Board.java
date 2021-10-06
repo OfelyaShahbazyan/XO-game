@@ -38,4 +38,12 @@ public class Board {
 
         return columns;
     }    
+
+    public List<List<Integer>> getDiagonals() {
+        List<List<Integer>> diagonals = new ArrayList<>();
+        diagonals.add(Arrays.asList(board[0], board[4], board[8]));
+        diagonals.add(Arrays.asList(board[2], board[4], board[6]));
+
+        return diagonals;
+    }
 }

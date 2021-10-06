@@ -2,7 +2,6 @@ package xogame.game_over;
 
 import java.util.List;
 import java.util.function.Predicate;
-import java.util.stream.Collectors;
 
 import xogame.models.Board;
 
@@ -15,6 +14,10 @@ public class GameOver {
 
     public static Boolean isAnyColumnComplete(Board board) {
         return doesAnyInnerListMatchTheCondition(board.getColumns(), listPredicate);
+    }
+
+    public static Boolean isAnyDiagonalComplete(Board board) {
+        return doesAnyInnerListMatchTheCondition(board.getDiagonals(), listPredicate);
     }
 
     public static Boolean doesAnyInnerListMatchTheCondition(List<List<Integer>> listOfLists, Predicate<List<Integer>> condition) {

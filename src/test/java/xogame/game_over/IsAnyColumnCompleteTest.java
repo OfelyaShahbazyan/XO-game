@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 import xogame.models.Board;
 
-public class IsAnyColumnComplete {
+public class IsAnyColumnCompleteTest {
     @Test
     public void the_first_column_is_complete_if_it_contains_all_ones() {
         Board board = new Board(new int[] { 1, 2, 0, 1, 2, 0, 1, 0, 0 });
