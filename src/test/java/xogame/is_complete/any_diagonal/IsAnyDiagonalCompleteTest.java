@@ -1,10 +1,11 @@
-package xogame.is_complete;
+package xogame.is_complete.any_diagonal;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
+import xogame.is_complete.IsComplete;
 import xogame.models.Board;
 
 public class IsAnyDiagonalCompleteTest {
