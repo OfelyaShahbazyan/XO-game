@@ -1,4 +1,4 @@
-package xogame.is_complete;
+package xogame.board.columns;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
