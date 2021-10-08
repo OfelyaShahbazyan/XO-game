@@ -25,7 +25,7 @@ public class Board {
         for (int i = 0; i < 3; i++) {
             rows.add(Arrays.asList(board[i * 3], board[i * 3 + 1], board[i * 3 + 2]));
         }
-        
+
         return rows;
     }
 
@@ -37,13 +37,24 @@ public class Board {
         }
 
         return columns;
-    }    
+    }
 
     public List<List<Integer>> getDiagonals() {
         List<List<Integer>> diagonals = new ArrayList<>();
-        
-        diagonals.add(Arrays.asList(board[0], board[4], board[8]));
-        diagonals.add(Arrays.asList(board[2], board[4], board[6]));
+
+        List<Integer> primaryDiagonal = new ArrayList<>();
+        List<Integer> secondaryDiagonal = new ArrayList<>();
+
+        for (int i = 0; i < board.length; i = i + getRows().size() + 1) {
+        primaryDiagonal.add(board[i]);
+        }
+
+        for (int i = getRows().size() - 1; i < board.length - 1; i = i + getRows().size() - 1) {
+        secondaryDiagonal.add(board[i]);
+        }
+
+        diagonals.add(primaryDiagonal);
+        diagonals.add(secondaryDiagonal);
 
         return diagonals;
     }
