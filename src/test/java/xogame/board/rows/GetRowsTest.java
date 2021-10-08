@@ -1,4 +1,4 @@
-package xogame.game_over;
+package xogame.board.rows;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
