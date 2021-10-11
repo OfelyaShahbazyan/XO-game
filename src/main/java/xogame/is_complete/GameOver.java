@@ -12,7 +12,7 @@ public class GameOver {
 
     public static Boolean isTheGameOver(Board board){
         return isAnyRowComplete(board) || isAnyColumnComplete(board) ||
-                isAnyDiagonalComplete(board) || !BoardUtils.doesBoardContainAtLeastOneEmptyCell(board);
+                isAnyDiagonalComplete(board) || BoardUtils.isTheBoardFull(board);
     }    
     
     public static Boolean isAnyRowComplete(Board board) {
