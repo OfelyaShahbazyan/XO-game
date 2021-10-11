@@ -7,10 +7,10 @@ import xogame.board_utils.BoardUtils;
 import xogame.list_utils.ListUtils;
 import xogame.models.Board;
 
-public class IsComplete {
+public class GameOver {
     public static final Predicate<List<Integer>> listPredicate = list -> list.stream().allMatch(e -> e == 1) || list.stream().allMatch(e -> e == 2);
 
-    public static Boolean isComplete(Board board){
+    public static Boolean isTheGameOver(Board board){
         return isAnyRowComplete(board) || isAnyColumnComplete(board) ||
                 isAnyDiagonalComplete(board) || !BoardUtils.doesBoardContainAtLeastOneEmptyCell(board);
     }    
