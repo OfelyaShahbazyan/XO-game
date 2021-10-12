@@ -37,18 +37,18 @@ public class GeneratorTest {
     @Test
     public void board_containing_first_row_all_twos_should_succeed_to_match() {
         assertArrayEquals(new int[] { 2, 2, 2, 0, 0, 0, 0, 0, 0 },
-                Generator.fill_in_row_of_a_board_with_symbol(2, 3).get(3).getBoard());
+                Generator.fill_in_row_of_a_board_with_symbol(2, 3).get(0).getBoard());
     }
 
     @Test
     public void board_containing_second_row_all_twos_should_succeed_to_match() {
         assertArrayEquals(new int[] { 0, 0, 0, 2, 2, 2, 0, 0, 0 },
-                Generator.fill_in_row_of_a_board_with_symbol(2, 3).get(4).getBoard());
+                Generator.fill_in_row_of_a_board_with_symbol(2, 3).get(1).getBoard());
     }
 
     @Test
     public void board_containing_third_row_all_twos_should_succeed_to_match() {
         assertArrayEquals(new int[] { 0, 0, 0, 0, 0, 0, 2, 2, 2 },
-                Generator.fill_in_row_of_a_board_with_symbol(2, 3).get(5).getBoard());
+                Generator.fill_in_row_of_a_board_with_symbol(2, 3).get(2).getBoard());
     }
 }
