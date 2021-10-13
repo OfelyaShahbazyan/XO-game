@@ -1,4 +1,4 @@
-package xogame.game_over;
+package xogame.coordinate;
 
 import xogame.models.Coordinate;
 import org.junit.jupiter.api.Test;
