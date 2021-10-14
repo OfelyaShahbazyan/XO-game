@@ -44,6 +44,10 @@ public class Generator {
         return new Result<Board>(new Board(array));
     }
 
+    public static Result<Board> fill_secondary_diagonal_of_the_board_with_symbol(int board_size, int symbol) {
+        return null;
+    }
+
     public static int[] generateIndiciesOfTheElementsOfTheColumn(int boardSize, int columnNumber) {
         int[] arrayOfIndicies = new int[boardSize];
         arrayOfIndicies[0] = columnNumber;
@@ -60,10 +64,9 @@ public class Generator {
         arrayOfIndicies[0] = 0;
 
         for (int i = 1; i < boardSize; i++) {
-            arrayOfIndicies[i] = arrayOfIndicies[i - 1] + boardSize +1;
+            arrayOfIndicies[i] = arrayOfIndicies[i - 1] + boardSize +  1;
         }
 
-        return arrayOfIndicies;
+         return arrayOfIndicies;
     }
 }
- 
