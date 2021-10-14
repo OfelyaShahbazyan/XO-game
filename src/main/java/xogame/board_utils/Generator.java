@@ -35,7 +35,13 @@ public class Generator {
     }
 
     public static Result<Board> fill_primary_diagonal_of_the_board_with_symbol(int board_size, int symbol) {
-       return null;
+        int[] array = new int[board_size * board_size];
+        int[] arrayOfIndicies = Generator.generateIndiciesOfTheElementsOfThePrimaryDiagonal(board_size);
+
+        for (int i = 0; i < arrayOfIndicies.length; i++) {
+            array[arrayOfIndicies[i]] = symbol;
+        }
+        return new Result<Board>(new Board(array));
     }
 
     public static int[] generateIndiciesOfTheElementsOfTheColumn(int boardSize, int columnNumber) {
