@@ -52,11 +52,9 @@ public class Board {
     @Override
     public boolean equals(Object o) {
         if (o == this)
-
             return true;
 
         if (!(o instanceof Board)) {
-
             return false;
         }
 
@@ -81,7 +79,6 @@ public class Board {
             }
             strBuilder.append(i).append(", ");
         }
-
         strBuilder.append("]");
 
         return strBuilder.toString();

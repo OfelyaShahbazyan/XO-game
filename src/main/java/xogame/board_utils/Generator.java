@@ -6,7 +6,7 @@ import xogame.models.Board;
 import xogame.utils.Result;
 
 public class Generator {
-    public static Result<Board> fill_nth_row_of_the_board_with_symbol(int board_size, int rowNumber, int symbol) {
+    public static Result<Board> generate_an_empty_board_and_fill_the_given_row_with_symbol(int board_size, int rowNumber, int symbol) {
         int[] array = new int[board_size * board_size];
 
         if (rowNumber < board_size) {
@@ -14,78 +14,45 @@ public class Generator {
 
             return new Result<Board>(new Board(array));
         } else {
-            return new Result<Board>(new Board(array), "There is no row like this.");
+            return new Result<Board>(new Board(array), "Invalid row number.");
         }
     }
 
-    public static Result<Board> fill_nth_column_of_the_board_with_symbol(int board_size, int columnNumber, int symbol) {
+    public static Result<Board> generate_an_empty_board_and_fill_the_given_column_with_symbol(int board_size, int columnNumber, int symbol) {
         int[] array = new int[board_size * board_size];
-        int[] arrayOfIndicies = Generator.generateIndiciesOfTheElementsOfTheColumn(board_size, columnNumber);
 
         if (columnNumber < board_size) {
+            array[columnNumber] = symbol;
 
-            for (int i = 0; i < arrayOfIndicies.length; i++) {
-                array[arrayOfIndicies[i]] = symbol;
+            for (int i = 1; i < board_size; i++) {
+                array[columnNumber + i * board_size] = symbol;
             }
 
             return new Result<Board>(new Board(array));
         } else {
-            return new Result<Board>(new Board(array), "There is no column number like this.");
+            return new Result<Board>(new Board(array), "Invalid column number.");
         }
     }
 
-    public static Result<Board> fill_primary_diagonal_of_the_board_with_symbol(int board_size, int symbol) {
+    public static Result<Board> generate_an_empty_board_and_fill_the_primary_diagonal_with_symbol(int board_size, int symbol) {
         int[] array = new int[board_size * board_size];
-        int[] arrayOfIndicies = Generator.generateIndiciesOfTheElementsOfThePrimaryDiagonal(board_size);
+        array[0] = symbol;
 
-        for (int i = 0; i < arrayOfIndicies.length; i++) {
-            array[arrayOfIndicies[i]] = symbol;
-        }
-        
-        return new Result<Board>(new Board(array));
-    }
-
-    public static Result<Board> fill_secondary_diagonal_of_the_board_with_symbol(int board_size, int symbol) {
-        int[] array = new int[board_size * board_size];
-        int[] arrayOfIndicies = Generator.generateIndiciesOfTheElementsOfTheSecondaryDiagonal(board_size);
-
-        for (int i = 0; i < arrayOfIndicies.length; i++) {
-            array[arrayOfIndicies[i]] = symbol;
+        for (int i = 1; i < board_size; i++) {
+            array[i * (board_size + 1)] = symbol;
         }
 
         return new Result<Board>(new Board(array));
     }
 
-    public static int[] generateIndiciesOfTheElementsOfTheColumn(int boardSize, int columnNumber) {
-        int[] arrayOfIndicies = new int[boardSize];
-        arrayOfIndicies[0] = columnNumber;
+    public static Result<Board> generate_an_empty_board_and_fill_the_secondary_diagonal_with_symbol(int board_size, int symbol) {
+        int[] array = new int[board_size * board_size];
+        array[board_size - 1] = symbol;
 
-        for (int i = 1; i < boardSize; i++) {
-            arrayOfIndicies[i] = arrayOfIndicies[i - 1] + boardSize;
+        for (int i = 1; i < board_size; i++) {
+            array[(i + 1) * (board_size - 1)] = symbol;
         }
 
-        return arrayOfIndicies;
-    }
-
-    public static int[] generateIndiciesOfTheElementsOfThePrimaryDiagonal(int boardSize) {
-        int[] arrayOfIndicies = new int[boardSize];
-        arrayOfIndicies[0] = 0;
-
-        for (int i = 1; i < boardSize; i++) {
-            arrayOfIndicies[i] = arrayOfIndicies[i - 1] + boardSize +  1;
-        }
-
-         return arrayOfIndicies;
-    }
-
-    public static int[] generateIndiciesOfTheElementsOfTheSecondaryDiagonal(int boardSize) {
-        int[] arrayOfIndicies = new int[boardSize];
-        arrayOfIndicies[0] = boardSize - 1;
-
-        for (int i = 1; i < boardSize; i++) {
-            arrayOfIndicies[i] = arrayOfIndicies[i - 1] + boardSize - 1;
-        }
-
-         return arrayOfIndicies;
+        return new Result<Board>(new Board(array));
     }
 }
