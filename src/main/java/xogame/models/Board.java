@@ -73,7 +73,6 @@ public class Board {
         StringBuilder strBuilder = new StringBuilder().append("[");
 
         for (int i = 0; i < board.length; i++) {
-
             if (i == board.length - 1) {
                 strBuilder.append(i);
             }
