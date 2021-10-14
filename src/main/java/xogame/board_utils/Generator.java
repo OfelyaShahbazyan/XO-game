@@ -69,4 +69,15 @@ public class Generator {
 
          return arrayOfIndicies;
     }
+
+    public static int[] generateIndiciesOfTheElementsOfTheSecondaryDiagonal(int boardSize) {
+        int[] arrayOfIndicies = new int[boardSize];
+        arrayOfIndicies[0] = boardSize - 1;
+
+        for (int i = 1; i < boardSize; i++) {
+            arrayOfIndicies[i] = arrayOfIndicies[i - 1] + boardSize - 1;
+        }
+
+         return arrayOfIndicies;
+    }
 }
