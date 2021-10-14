@@ -21,4 +21,15 @@ public class Generator {
     public static Result<Board> fill_nth_column_of_the_board_with_symbol(int board_size, int columnNumber, int symbol) {
         return null;
     }
+
+    public static int[] generateIndiciesOfTheElementsOfTheColumn(int boardSize, int columnNumber) {
+        int[] arrayOfIndicies = new int[boardSize];
+        arrayOfIndicies[0] = columnNumber;
+
+        for (int i = 1; i < boardSize; i++) {
+            arrayOfIndicies[i] = arrayOfIndicies[i - 1] + boardSize;
+        }
+
+        return arrayOfIndicies;
+    }
 }

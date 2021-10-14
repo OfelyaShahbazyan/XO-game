@@ -60,7 +60,7 @@ public class GeneratorTest {
         Result<Board> res = Generator.fill_nth_column_of_the_board_with_symbol(3, 5, 1);
 
         assertArrayEquals(new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0 }, res.value.getBoard());
-        assertEquals("There is no column like this.", res.errorMessage);
+        assertEquals("There is no column number like this.", res.errorMessage);
         assertFalse(res.isSuccess);
     }
 }
