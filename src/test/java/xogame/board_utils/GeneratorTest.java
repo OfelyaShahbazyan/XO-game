@@ -36,4 +36,31 @@ public class GeneratorTest {
         assertEquals("There is no row like this.", res.errorMessage);
         assertFalse(res.isSuccess);
     }
+
+    @Test
+    public void filling_first_column_of_the_board_with_ones_should_succeed_to_match() {
+        assertArrayEquals(new int[] { 1, 0, 1, 0 },
+                Generator.fill_nth_column_of_the_board_with_symbol(2, 0, 1).value.getBoard());
+    }
+
+    @Test
+    public void filling_second_column_of_the_board_with_twos_should_succeed_to_match() {
+        assertArrayEquals(new int[] { 0, 1, 0, 1 },
+                Generator.fill_nth_column_of_the_board_with_symbol(2, 1, 1).value.getBoard());
+    }
+
+    @Test
+    public void filling_third_column_of_the_board_with_ones_should_succeed_to_match() {
+        assertArrayEquals(new int[] { 0, 0, 1, 0, 0, 1, 0, 0, 1 },
+                Generator.fill_nth_column_of_the_board_with_symbol(3, 2, 1).value.getBoard());
+    }
+
+    @Test
+    public void filling_sixth_column_of_the_board_with_ones_should_fail_to_match() {
+        Result<Board> res = Generator.fill_nth_column_of_the_board_with_symbol(3, 5, 1);
+
+        assertArrayEquals(new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0 }, res.value.getBoard());
+        assertEquals("There is no column like this.", res.errorMessage);
+        assertFalse(res.isSuccess);
+    }
 }

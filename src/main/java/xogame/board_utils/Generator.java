@@ -17,4 +17,8 @@ public class Generator {
             return new Result<Board>(new Board(array), "There is no row like this.");
         }
     }
+
+    public static Result<Board> fill_nth_column_of_the_board_with_symbol(int board_size, int columnNumber, int symbol) {
+        return null;
+    }
 }
