@@ -19,7 +19,19 @@ public class Generator {
     }
 
     public static Result<Board> fill_nth_column_of_the_board_with_symbol(int board_size, int columnNumber, int symbol) {
-        return null;
+        int[] array = new int[board_size * board_size];
+        int[] arrayOfIndicies = Generator.generateIndiciesOfTheElementsOfTheColumn(board_size, columnNumber);
+
+        if (columnNumber < board_size) {
+
+            for (int i = 0; i < arrayOfIndicies.length; i++) {
+                array[arrayOfIndicies[i]] = symbol;
+            }
+
+            return new Result<Board>(new Board(array));
+        } else {
+            return new Result<Board>(new Board(array), "There is no column number like this.");
+        }
     }
 
     public static int[] generateIndiciesOfTheElementsOfTheColumn(int boardSize, int columnNumber) {
