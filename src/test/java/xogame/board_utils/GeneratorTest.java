@@ -63,4 +63,10 @@ public class GeneratorTest {
         assertEquals("There is no column number like this.", res.errorMessage);
         assertFalse(res.isSuccess);
     }
+
+    @Test
+    public void filling_primary_diagonal_of_the_board_with_ones_should_succeed_to_match() {
+        assertArrayEquals(new int[] { 1, 0, 0, 1 },
+                Generator.fill_primary_diagonal_of_the_board_with_symbol(2, 1).value.getBoard());
+    }
 }
