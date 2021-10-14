@@ -73,6 +73,6 @@ public class GeneratorTest {
     @Test
     public void filling_secondary_diagonal_of_the_board_with_ones_should_succeed_to_match() {
         assertArrayEquals(new int[] { 0, 0, 2, 0, 2, 0, 2, 0, 0 },
-                Generator.fill_secondary_diagonal_of_the_board_with_symbol(2, 1).value.getBoard());
+                Generator.fill_secondary_diagonal_of_the_board_with_symbol(3, 2).value.getBoard());
     }
 }
