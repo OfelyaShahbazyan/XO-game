@@ -7,36 +7,16 @@ import xogame.utils.Result;
 
 public class BoardGenerator {
 
-    public static Result<Board> generate_an_empty_board_and_fill_the_given_row_with_symbol(int board_size,
-            int rowNumber, int symbol) {
-
-        // 1
-        // if (rowNumber < board_size) {
-        // Arrays.fill(array, board_size * rowNumber, (rowNumber + 1) * board_size,
-        // symbol);
-
-        // return new Result<Board>(new Board(array));
-        // } else {
-        // return new Result<Board>(new Board(array), "Invalid row number.");
-        // }
-
-        // 2
-        // int[] array = new int[board_size * board_size];
-        // if (rowNumber < board_size) {
-        // Arrays.fill(array, board_size * rowNumber, (rowNumber + 1) * board_size,
-        // symbol);
-        // }
-        // return new Result<Board>(new Board(array));
-
-        // 3
+    public static Result<Board> generate_an_empty_board_and_fill_the_given_row_with_symbol(int board_size, int rowNumber, int symbol) {
         int[] array = new int[board_size * board_size];
-        Result<Board> rb = new Result<Board>(new Board(array), "Invalid row number.");
 
         if (rowNumber < board_size) {
             Arrays.fill(array, board_size * rowNumber, (rowNumber + 1) * board_size, symbol);
-            rb = new Result<Board>(new Board(array));
+
+            return new Result<Board>(new Board(array));
+        } else {
+            return new Result<Board>(new Board(array), "Invalid row number.");
         }
-        return rb;
     }
 
     public static Result<Board> generate_an_empty_board_and_fill_the_given_column_with_symbol(int board_size,

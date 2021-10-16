@@ -4,63 +4,48 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
+import xogame.board_utils.BoardGenerator;
 import xogame.models.Board;
 
 public class GameOverTest {
     @Test
     public void the_game_should_be_over_if_first_row_all_ones() {
-        Board board = new Board(new int[] { 1, 1, 1, 2, 2, 0, 0, 0, 0 });
-
-        assertTrue(GameOver.isTheGameOver(board));
+        assertTrue(GameOver.isTheGameOver(BoardGenerator.generate_an_empty_board_and_fill_the_given_row_with_symbol(3, 0, 1).value));
     }
 
     @Test
     public void the_game_should_be_over_if_second_row_all_ones() {
-        Board board = new Board(new int[] { 2, 2, 0, 1, 1, 1, 0, 0, 0 });
-
-        assertTrue(GameOver.isTheGameOver(board));
+        assertTrue(GameOver.isTheGameOver(BoardGenerator.generate_an_empty_board_and_fill_the_given_row_with_symbol(3, 1, 1).value));
     }
 
     @Test
     public void the_game_should_be_over_if_third_row_all_ones() {
-        Board board = new Board(new int[] { 2, 2, 0, 0, 0, 0, 1, 1, 1 });
-
-        assertTrue(GameOver.isTheGameOver(board));
+        assertTrue(GameOver.isTheGameOver(BoardGenerator.generate_an_empty_board_and_fill_the_given_row_with_symbol(3, 2, 1).value));
     }
 
     @Test
     public void the_game_should_be_over_if_first_column_all_ones() {
-        Board board = new Board(new int[] { 1, 2, 0, 1, 0, 0, 1, 0, 1 });
-
-        assertTrue(GameOver.isTheGameOver(board));
+        assertTrue(GameOver.isTheGameOver(BoardGenerator.generate_an_empty_board_and_fill_the_given_column_with_symbol(3, 0, 1).value));
     }
 
     @Test
     public void the_game_should_be_over_if_second_column_all_ones() {
-        Board board = new Board(new int[] { 0, 1, 0, 2, 1, 0, 2, 1, 1 });
-
-        assertTrue(GameOver.isTheGameOver(board));
+        assertTrue(GameOver.isTheGameOver(BoardGenerator.generate_an_empty_board_and_fill_the_given_column_with_symbol(3, 1, 1).value));
     }
 
     @Test
     public void the_game_should_be_over_if_third_column_all_ones() {
-        Board board = new Board(new int[] { 0, 2, 1, 2, 1, 1, 2, 0, 1 });
-
-        assertTrue(GameOver.isTheGameOver(board));
+        assertTrue(GameOver.isTheGameOver(BoardGenerator.generate_an_empty_board_and_fill_the_given_column_with_symbol(3, 2, 1).value));
     }
 
     @Test
     public void the_game_should_be_over_if_primary_diagonal_all_ones() {
-        Board board = new Board(new int[] { 1, 2, 0, 0, 1, 0, 2, 0, 1 });
-
-        assertTrue(GameOver.isTheGameOver(board));
+        assertTrue(GameOver.isTheGameOver(BoardGenerator.generate_an_empty_board_and_fill_the_primary_diagonal_with_symbol(3, 1).value));
     }
 
     @Test
     public void the_game_should_be_over_if_secondary_diagonal_all_ones() {
-        Board board = new Board(new int[] { 0, 2, 1, 0, 1, 2, 1, 0, 2 });
-
-        assertTrue(GameOver.isTheGameOver(board));
+        assertTrue(GameOver.isTheGameOver(BoardGenerator.generate_an_empty_board_and_fill_the_secondary_diagonal_with_symbol(3, 1).value));
     }
 
     @Test
