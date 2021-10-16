@@ -48,8 +48,8 @@ public class Board {
         int[] secondaryDiagonal = new int[3];
 
         for (int i = 0; i < 3; i++) {
-            primaryDiagonal[i] = board[i * 3 + i];
-            secondaryDiagonal[i] = board[i * 3 + 3 - (i + 1)];
+            primaryDiagonal[i] = board[4 * i];
+            secondaryDiagonal[i] = board[2 * (i + 1)];
         }
 
         diagonals.add(IntStream.of(primaryDiagonal).boxed().collect(Collectors.toList()));
