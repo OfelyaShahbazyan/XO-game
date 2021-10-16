@@ -1,7 +1,6 @@
 package xogame.board_utils;
 
 import java.util.Arrays;
-import java.util.stream.IntStream;
 
 import xogame.models.Board;
 import xogame.utils.Result;
@@ -62,10 +61,14 @@ public class BoardGenerator {
     }
 
     public static Board generate_an_empty_board_and_fill_it_with_from_one_to_board_size(int board_size){
-      return null;
+        int [] array = new int[board_size * board_size];
+        Arrays.setAll(array, p -> p > board_size * board_size ? 0 : p + 1);
+        return new Board(array);
     }
 
     public static Board generate_an_empty_board_and_fill_it_with_from_zero_to_board_size_minus_one(int board_size){
-        return null;
+        int [] array = new int[board_size * board_size];
+        Arrays.setAll(array, p -> p > board_size * board_size ? 0 : p);
+        return new Board(array);
     }
 }
