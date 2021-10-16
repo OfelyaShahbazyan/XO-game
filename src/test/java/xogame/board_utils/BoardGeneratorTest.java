@@ -74,4 +74,16 @@ public class BoardGeneratorTest {
         assertEquals(new Board(new int[] { 0, 0, 2, 0, 2, 0, 2, 0, 0 }),
                 BoardGenerator.generate_an_empty_board_and_fill_the_secondary_diagonal_with_symbol(3, 2).value);
     }
+
+    @Test
+    public void generating_an_empty_board_of_size_three_by_three_and_filling_it_with_from_one_to_board_size_should_succeed_to_match() {
+        assertEquals(new Board(new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9 }),
+                BoardGenerator.generate_an_empty_board_and_fill_it_with_from_one_to_board_size(3));
+    }
+
+    @Test
+    public void generating_an_empty_board_of_size_three_by_three_and_filling_it_with_from_zero_to_size_minus_one_should_succeed_to_match() {
+        assertEquals(new Board(new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 8 }),
+                BoardGenerator.generate_an_empty_board_and_fill_it_with_from_zero_to_board_size_minus_one(3));
+    }
 }
