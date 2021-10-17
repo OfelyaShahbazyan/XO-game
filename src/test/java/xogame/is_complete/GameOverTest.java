@@ -5,7 +5,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
 
 import xogame.board_utils.BoardGenerator;
-import xogame.models.Board;
 
 public class GameOverTest {
     @Test
@@ -50,15 +49,11 @@ public class GameOverTest {
 
     @Test
     public void the_game_should_be_over_if_the_board_is_full() {
-        Board board = new Board(new int[] { 2, 2, 1, 1, 1, 2, 2, 1, 2 });
-
-        assertTrue(GameOver.isTheGameOver(board));
+        assertTrue(GameOver.isTheGameOver(BoardGenerator.generate_an_empty_board_and_fill_it_with_from_one_to_board_size(3)));
     }
 
     @Test
     public void the_game_should_not_be_over_if_the_board_is_not_full() {
-        Board board = new Board(new int[] { 2, 2, 1, 1, 1, 2, 0, 1, 2 });
-
-        assertFalse(GameOver.isTheGameOver(board));
+        assertFalse(GameOver.isTheGameOver(BoardGenerator.generate_an_empty_board_and_fill_it_with_from_zero_to_board_size_minus_one(3)));
     }
 }
