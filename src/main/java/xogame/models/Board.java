@@ -3,6 +3,7 @@ package xogame.models;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -56,5 +57,40 @@ public class Board {
         diagonals.add(IntStream.of(secondaryDiagonal).boxed().collect(Collectors.toList()));
 
         return diagonals;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == this)
+            return true;
+
+        if (!(o instanceof Board)) {
+            return false;
+        }
+
+        Board board = (Board) o;
+
+        return Arrays.equals(board.getBoard(), this.board);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(board);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder strBuilder = new StringBuilder().append("[");
+
+        for (int i = 0; i < board.length; i++) {
+            if (i == board.length - 1) {
+                strBuilder.append(i);
+            } else {
+                strBuilder.append(i).append(", ");
+            }
+        }
+        strBuilder.append("]");
+
+        return strBuilder.toString();
     }
 }
