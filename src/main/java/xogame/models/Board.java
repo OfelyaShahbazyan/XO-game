@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 public class Board {
     private final int[] board;
@@ -53,8 +51,8 @@ public class Board {
             secondaryDiagonal[i] = board[2 * (i + 1)];
         }
 
-        diagonals.add(IntStream.of(primaryDiagonal).boxed().collect(Collectors.toList()));
-        diagonals.add(IntStream.of(secondaryDiagonal).boxed().collect(Collectors.toList()));
+        diagonals.add(Arrays.asList(primaryDiagonal[0], primaryDiagonal[1], primaryDiagonal[2]));
+        diagonals.add(Arrays.asList(secondaryDiagonal[0], secondaryDiagonal[1], secondaryDiagonal[2]));
 
         return diagonals;
     }
