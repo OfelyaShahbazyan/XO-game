@@ -1,25 +1,13 @@
 package xogame.utils;
 
-public class Result<V> {
+public abstract class Result<V> {
   public final V value;
   public final boolean isSuccess;
   public final String errorMessage;
 
-  public Result(V value) {
+  public Result(V value, boolean isSuccess, String errorMessage) {
     this.value = value;
-    this.isSuccess = true;
-    this.errorMessage = "";
-  }
-
-  public Result(V value, String errorMessage) {
-    this.value = value;
-    this.isSuccess = false;
-    this.errorMessage = errorMessage;
-  }
-
-  public Result(String errorMessage) {
-    this.value = null;
-    this.isSuccess = false;
+    this.isSuccess = isSuccess;
     this.errorMessage = errorMessage;
   }
 }
